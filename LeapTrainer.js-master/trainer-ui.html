@@ -1,0 +1,109 @@
+﻿<!doctype html>
+
+<html>
+	<head>
+		<title>Leap Trainer UI v.03</title>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+		<link type="text/css" rel="stylesheet" href="./trainer-ui/css/leaptrainer-ui.css" />
+	</head>
+
+	<body>
+
+		<div id="main">
+
+			<div id="gesture-creation-area">
+				<form id="new-gesture-form">
+					<input type="text" id="new-gesture-name" value="Create a Gesture" maxlength="15" autocomplete="off"/>
+					<input type="submit" id="create-new-gesture" value="Create" class="button"/>
+				</form>
+				<img src="./trainer-ui/images/create-arrow.png" />
+			</div>
+			
+			<ul id="existing-gestures"></ul>
+			<div id="output-text"></div>
+			<div id="render-area"></div>
+
+			<input id="options-button" type="button" value="Options" class="button"/>
+
+			
+			
+		</div>
+
+		<div id="options">
+
+			<table>
+				<tbody>
+					<tr><td class="label">Recording Trigger</td><td><select id="recording-triggers"></select></td></tr>
+					<tr><td class="label">Gesture encoding</td><td><select id="recording-strategies"></select></td></tr>
+					<tr><td class="label">Recognition Strategy</td><td><select id="recognition-strategies"></select></td></tr>
+					
+					<tr><td class="label">&nbsp;</td><td>&nbsp;</td></tr>
+					
+					<tr><td class="label">Min. gesture velocity</td><td><input type="text" id="minRecordingVelocity"/></td></tr>
+					<tr><td class="label">Max. pose velocity</td><td><input type="text" id="maxRecordingVelocity"/></td></tr>
+					
+					<tr><td class="label">Min. gesture frames</td><td><input type="text" id="minGestureFrames"/></td></tr>
+					<tr><td class="label">Min. pose frames</td><td><input type="text" id="minPoseFrames"/></td></tr>
+					
+					<tr><td class="label">Hit threshold</td><td><input type="text" id="hitThreshold"/></td></tr>
+					<tr><td class="label">Training gestures</td><td><input type="text" id="trainingGestures"/></td></tr>
+					<tr><td class="label">Convolution factor</td><td><input type="text" id="convolutionFactor"/></td></tr>
+					<tr><td class="label">Down-time</td><td><input type="text" id="downtime"/></td></tr>
+					
+					<tr><td class="label">&nbsp;</td><td>&nbsp;</td></tr>
+
+					<tr><td class="label">Open options</td><td><select id="open-configuration"><option></option></select></td></tr>
+					<tr><td class="label">Close options</td><td><select id="close-configuration"><option></option></select></td></tr>
+				</tbody>
+			</table>
+
+		    <div id="options-update-confirmation">Configuration Updated!</div>
+		</div>
+
+		<div id="overlay-shade"></div>
+
+		<div id="overlay">
+			<div>
+				<p>To use the <b id="exporting-gesture-name"></b> gesture, copy the text in the text area below and import it into a <b>LeapTrainer.Controller</b> using the <b>fromJSON</b> function:</p>
+				
+				<p id="sample-import-code">
+					var trainer = new LeapTrainer.Controller();
+					<br/>
+					trainer.fromJSON('<i id="exporting-gesture-sample-text"></i>');
+				</p>
+			</div>
+			<div>
+				<textarea id="export-text"></textarea>
+				
+				<input type="button" id="retrain-gesture" value="Retrain" class="button"/>
+				<input type="button" id="close-overlay" value="Close" class="button"/>
+			</div>
+		</div>
+		
+		<div id="webgl-warning"><b>WARNING:</b> Your browser does not support WebGL. Rendering quality is limited and gesture trails are disabled.</div>
+		
+	</body>
+
+	<script src="./trainer-ui/js/jquery.min.js"></script>
+	<script src="./trainer-ui/js/jquery.touchwipe.min.js"></script>
+
+	<script src="./trainer-ui/js/three.min.js"></script>
+	<script src="./trainer-ui/js/detector.js"></script>
+	<script src="./trainer-ui/js/tween.js"></script>
+	<script src="./trainer-ui/js/orbit-controls.js"></script>
+
+	<!-- A local copy of the Leap Motion Javascript API is useful during testing-->
+	<script src="./lib/leap.js"></script>
+	<!-- script src="http://js.leapmotion.com/0.2.0/leap.min.js"></script -->
+		
+	<script src="./leaptrainer.js"></script>
+	
+	<script src="./sub-classes/high-resolution-recording.js"></script>
+	<script src="./sub-classes/lib/brain.js"></script>
+	<script src="./sub-classes/neural-networks.js"></script>
+	<script src="./sub-classes/cross-correlation.js"></script>
+	
+	<script src="./leaptrainer-ui.js"></script>
+</html>

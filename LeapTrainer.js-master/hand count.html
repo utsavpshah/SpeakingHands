@@ -1,0 +1,17 @@
+<title>2 hands 10 fingers</title>
+<script src="leap-min.js"></script>
+<textarea id="testhandcount">u</textarea>    
+<script>
+//var handsDiv = document.getElementById("hands");
+
+    Leap.loop(function (obj) {
+        var hands = obj.hands.length;
+        if (hands == 1) {
+            testhandcount.value = "1";
+        }
+        else {
+            testhandcount.value = "0";
+        }
+    });
+
+</script>

@@ -1,0 +1,5 @@
+Open index2.html file to run this application.
+Speaking Hands\LeapTrainer.js-master\menu-demo
+
+To add more signs in this application, 
+use trainer-ui.html.
