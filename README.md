@@ -5,6 +5,6 @@ This project represents the concept of American Sign Language recognition using 
 We also extended this project to control the 5 DOF(Degree of Freedom) Robotic Arm using Leap Motion sensor.
 You can watch the video of both the projects in my YouTube channel.
 https://www.youtube.com/channel/UCGpGRR1mEtjkwiD4PfDH6sw
-To more know about these projects, you can drop me an email at utsavpshah@gmail.com
+To more know about these projects, you can drop me an email at utsav.p.shah@gmail.com
 Or connect with me on LinkedIn at 
 https://www.linkedin.com/in/utsavshah01
